@@ -1,0 +1,21 @@
+
+<select (change)="onGoalChange($event.target.value)">
+  <option value="allGoals" selected="selected">All Goals</option>
+  <option value="Expensive">Expensive</option>
+  <option value="Inexpensive">Inexpensive</option>
+</select>
+
+<div class="project-list">
+  <div class="card-deck">
+    <div class="card" *ngFor = "let project of projects | async | projectPipe:filterByGoal">
+      <img (click) = "showDetails(project)"class="card-img-top" src={{project.headerImage}} alt="Thumbnail for project">
+      <div class="card-block">
+        <h4 class="card-title">{{project.name}}</h4>
+        <p class="card-text description">{{project.description}}</p>
+        <p class="card-text goal" *ngFor="let manager of project.managers"><small class="text-muted">By: {{manager}}</small></p>
+        <p class="card-text goal"><small class="text-muted">Goal: ${{project.goal}}</small></p>
+        <p class="card-text date"><small class="text-muted">End Date: {{project.dueDate}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

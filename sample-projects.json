@@ -1,0 +1,90 @@
+{
+  "projects": [{
+    "name": "Fossil Hunters",
+    "managers": ["Reptoid Games"],
+    "description": "Build your own dinosaurs and explore secret caves in the center of the Earth as you uncover forgotten fossils and lost treasure.",
+    "fundsRaised": 18294,
+    "goal":30000,
+    "purpose":"Our first priority is completing Fossil Hunters and giving our players the best quality fossil-hunting experience possible. Our original budget accounts for the initial PC and Mac release, with distribution on Steam and Uplay.",
+    "totalBackers": 623,
+    "dueDate": "2018-04-30 12:00",
+    "headerImage": "http://cdn.edgecast.steamstatic.com/steam/apps/690150/header.jpg?t=1503958911",
+    "rewards":[{
+        "tier": 14,
+        "name": "Fossil Friend",
+        "description": "Get a digital copy of the game.",
+        "backers": 294
+      },
+      {
+        "tier": 25,
+        "name": "Fossil Enthusiast",
+        "description": "Get a download key for the soundtrack!",
+        "backers": 24
+      },
+      {
+        "tier": 30,
+        "name": "Fossil Hunter",
+        "description": "Get the soundtrack and the art book with a $5 savings",
+        "backers": 43
+      }]
+    },
+    {
+      "name": "2017 HONK! Festival of Activist Street Bands",
+      "managers": ["HONK! Committee"],
+      "description": "The HONK! Festival is a one-of-a-kind street spectacle of revolutionary proportions. This year marks the 12th anniversary.",
+      "fundsRaised": 5324,
+      "goal":15000,
+      "purpose":"We need to raise $15,000 to insure that every band that wants to come to HONK! can make the journey. Every donation — your donation — will help.",
+      "totalBackers": 204,
+      "dueDate": "2018-05-18 12:00",
+      "headerImage" :"https://www.honkfestwest.org/wp-content/uploads/2017/03/honk-logo-2017-color-1107x695-1107x500.png",
+      "rewards": [{
+        "tier": 12,
+        "name": "$12 for 12 Years",
+        "description": "Keep your eyes peeled for a personalized Social Media shout out!",
+        "backers": 32
+      },
+      {
+        "tier": 25,
+        "name": "Two Music Tracks",
+        "description": "Recieve a digital download of 2 songs from one of our fabulous HONK! bands.",
+        "backers": 34
+      },
+      {
+        "tier": 75,
+        "name": "2017 Poster plus 2017 T-Shirt",
+        "description": "Poster to decorate your wall and matching 2017 HONK! t-shirt.",
+        "backers": 26
+      }]
+
+  },
+  {
+  "name": "24 Hour Flowers - Relaunch!",
+  "managers": ["The Foliage Library"],
+  "description": "An interactive folding pop-up book exploring a diverse array of flowers that bloom for only one day.",
+  "fundsRaised": 5294,
+  "goal":9500,
+  "purpose":"24 Hour Flowers: inside of an old, rusty clock thrive 8 species of flowers that all have one thing in common: their blooms only last for one day! Prepare for a journey full of new botanical knowledge and breathtaking illustrations. As you explore four families of fascinating yet fleeting flora growing thick through the clock gears of this 12-sided book, you will learn new facts about each one, what makes them the same, and what makes them different.",
+  "totalBackers": 114,
+  "dueDate": "2017-11-14 12:00",
+  "headerImage":"http://www.bestpopupbooks.com/wp-content/uploads/2017/05/24-hour-flower-banner2.jpg",
+  "rewards":[{
+      "tier": 10,
+      "name": "Original Doodle",
+      "description": "Hand written thank you card and an original doodle from one of the artists.",
+      "backers": 0
+    },
+    {
+      "tier": 15,
+      "name": "Sticker Sheets",
+      "description": "2 Sticker Sheets, each with 13 stickers.",
+      "backers": 3
+    },
+    {
+      "tier": 30,
+      "name": "1 Book",
+      "description": "Signed copy of 24 Hour Flowers and a hand written thank you card.",
+      "backers": 23
+    }]
+  }]
+}

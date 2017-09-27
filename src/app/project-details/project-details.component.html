@@ -1,0 +1,61 @@
+<div *ngIf = "selectedProject | async">
+  <div class="details-top">
+    <div class="container details-top">
+      <div class="row title">
+        <div class="col-md-2">
+          <p class="managers" *ngFor="let manager of (selectedProject | async).managers">{{manager}}</p>
+        </div>
+        <div class="col-md-10">
+          <h1>{{(selectedProject | async).name}}</h1>
+          <p class="description">{{(selectedProject | async).description}}</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8">
+          <img class="description-img" src='{{(selectedProject | async).headerImage}}' alt="Project Header Image">
+        </div>
+        <div class="col-md-3 header-details">
+          <ul>
+            <li><strong>Pledged:</strong> ${{(selectedProject | async).fundsRaised}}</li>
+            <li><strong>Goal:</strong> ${{(selectedProject | async).goal}}</li>
+            <li><strong>Backers:</strong> {{(selectedProject | async).totalBackers}}</li>
+            <li><strong>End Date:</strong> {{(selectedProject | async).dueDate}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3 class="purpose">Purpose</h3>
+    <p class="purpose-text">{{(selectedProject | async).purpose}}</p>
+
+    <div class="card-deck rewards">
+      <div class="card" *ngFor = "let reward of (selectedProject | async).rewards">
+        <div class="card-block">
+          <h4 class="card-title">Pledge ${{reward.tier}} or more</h4>
+          <p class="card-text tier">{{reward.name}}</p>
+          <p class="card-text description"><small class="text-muted"> {{reward.description}}</small></p>
+          <p class="card-text backers"><small class="text-muted">Backers: {{reward.backers}}</small></p>
+          <button (click)="pledgeForm(reward)" class="btn btn-sm btn-success">Pledge</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="card" id="pledge-form"  *ngIf="showPledge">
+  <form>
+    <h3 class="pledge-form-title">Submit Pledge</h3>
+    <label>Pledge Amount:</label>
+    <input type="number" value="{{selectedReward.tier}}">
+    <label>Name:</label>
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+    <label>Credit Card Number:</label>
+    <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
+    <label>Email Address:</label>
+    <input type="text" placeholder="emailaddress@email.com">
+  </form>
+</div>
