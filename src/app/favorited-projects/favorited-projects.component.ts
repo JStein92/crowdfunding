@@ -10,14 +10,13 @@ import { Router } from '@angular/router';
   providers:[ProjectService]
 })
 export class FavoritedProjectsComponent implements OnInit {
-  projectToShow;
-  favoritedProjects :FirebaseListObservable<any[]>;
+  favoritedProjects;
   constructor(private router:Router, private projectService : ProjectService) { }
 
 
   ngOnInit() {
-    this.favoritedProjects = this.projectService.getFavoritedProjects();
-    //console.log(this.favoritedProjects);
+    this.favoritedProjects = this.projectService.getProjects();
+    console.log(this.favoritedProjects);
   }
 
   showDetails(projectToShow){

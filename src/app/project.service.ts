@@ -5,25 +5,25 @@ import {Reward} from './reward.model';
 @Injectable()
 export class ProjectService {
 
-  favoritedProjects : FirebaseListObservable<any[]>;
   projects : FirebaseListObservable<any[]>;
   constructor(private database: AngularFireDatabase)
   {
     this.projects = database.list('projects');
-    this.favoritedProjects = database.list('favoritedProjects');
   }
 
   getProjects(){
     return this.projects;
   }
 
-  addProjectToFavorites(myProject : Project){
-    this.favoritedProjects.push(myProject);
-
-  }
-
   getFavoritedProjects(){
-    return this.favoritedProjects;
+    // let favorited = [];
+    // for (let i = 0; i < this.projects.length; i++) {
+    //   if (this.projects[i].favorited)
+    //   {
+    //     favorited.push(this.projects[i]);
+    //   }
+    // }
+    // return favorited;
   }
 
   addProject(newProject : Project){
@@ -33,6 +33,11 @@ export class ProjectService {
   getProjectByKey(projectKey:string)
   {
     return this.database.object('projects/' + projectKey);
+  }
+
+  addProjectToFavorites(myProject : Project, myProjectKey){
+    let projectEntryInFirebase = this.getProjectByKey(myProjectKey);
+    projectEntryInFirebase.update({favorited: myProject.favorited});
   }
 
   addPledge(updatedProjectFundsRaised, projectToUpdateKey, pledgeAmount){

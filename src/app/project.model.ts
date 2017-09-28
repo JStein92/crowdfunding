@@ -2,6 +2,7 @@ import {Reward} from './reward.model';
 
 export class Project {
   fundsRaised: number = 0;
+  favorited: boolean = false;
   constructor(public name: string,
     public managers: string[],
     public description: string,

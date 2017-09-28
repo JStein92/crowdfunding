@@ -31,7 +31,8 @@ export class HomeComponent implements OnInit {
   }
 
   favorite(projectToFavorite){
-    this.projectService.addProjectToFavorites(projectToFavorite);
+    projectToFavorite.favorited = true;
+    this.projectService.addProjectToFavorites(projectToFavorite, projectToFavorite.$key);
     console.log(projectToFavorite);
   }
 
