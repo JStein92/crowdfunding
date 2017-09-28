@@ -1,0 +1,12 @@
+.card-block {
+  background-color: 	#faf0e6;
+}
+.pledge-btn {
+  padding: 10px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+.pledge-btn:hover {
+  cursor: pointer;
+
+}

@@ -34,4 +34,31 @@ export class ProjectDetailsComponent implements OnInit {
     this.showPledge = true;
     this.selectedReward = clickedReward;
   }
+
+  cancel() {
+    this.showPledge = false;
+  }
+
+  submit(pledgeAmount) {
+    let key:number;
+    let updatedProjectFundsRaised;
+      this.projectService.getProjectByKey(this.selectedProjectKey).subscribe(dataLastEmittedFromObserver => {
+      updatedProjectFundsRaised = dataLastEmittedFromObserver.fundsRaised;
+                                  key = dataLastEmittedFromObserver.$key;
+    })
+      this.projectService.addPledge(updatedProjectFundsRaised, key, pledgeAmount);
+  }
 }
+
+// updatedProject = new Project(dataLastEmittedFromObserver.name,
+//                              dataLastEmittedFromObserver.managers,
+//                              dataLastEmittedFromObserver.description,
+//                              dataLastEmittedFromObserver.goal,
+//                              dataLastEmittedFromObserver.purpose,
+//                              dataLastEmittedFromObserver.totalBackers,
+//                              dataLastEmittedFromObserver.dueDate,
+//                              dataLastEmittedFromObserver.headerImage,
+//                              dataLastEmittedFromObserver.rewards)
+//                              updatedProject.fundsRaised = dataLastEmittedFromObserver.fundsRaised;
+//
+//                             key = dataLastEmittedFromObserver.$key;

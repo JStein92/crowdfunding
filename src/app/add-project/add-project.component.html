@@ -1,0 +1,76 @@
+<div class="container">
+
+  <div *ngIf="projectToDisplay" class="projectToDisplay">
+
+    <div class="card">
+      <img class="card-img-top" src={{projectToDisplay.headerImage}} alt="Thumbnail for project">
+      <div class="card-block">
+        <h4 class="card-title">{{projectToDisplay.name}}</h4>
+        <p class="card-text description">{{projectToDisplay.description}}</p>
+        <p class="card-text goal" *ngFor="let manager of projectToDisplay.managers"><small class="text-muted">By: {{manager}}</small></p>
+        <p class="card-text goal"><small class="text-muted">Goal: ${{projectToDisplay.goal}}</small></p>
+        <p class="card-text date"><small class="text-muted">End Date: {{projectToDisplay.dueDate}}</small></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="rewardsToDisplay" *ngIf="projectToDisplay">
+
+    <div class="card-deck rewards">
+      <div class="card reward-card" *ngFor = "let reward of (projectToDisplay).rewards">
+        <div class="card-block">
+          <h4 class="card-title">Pledge ${{reward.tier}} or more</h4>
+          <p class="card-text tier">{{reward.name}}</p>
+          <p class="card-text description"><small class="text-muted"> {{reward.description}}</small></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="projectForm" *ngIf="!projectToDisplay">
+    <div class="projectForm-header">
+      <h2>Create a new Project!</h2>
+    </div>
+
+    <label class="projectForm-label" for="name">Project Name</label>
+    <input type="text" name="name" #name class="form-control">
+
+    <label class="projectForm-label" for="managers">Project Managers</label>
+    <input type="text" name="managers" #managers class="form-control">
+
+    <label class="projectForm-label" for="description">Project Description</label>
+    <input type="text" name="description" #description class="form-control">
+
+    <label class="projectForm-label" for="goal">Project Goal</label>
+    <input type="number" name="goal" #goal class="form-control">
+
+    <label class="projectForm-label" for="purpose">Project Purpose</label>
+    <input type="text" name="purpose" #purpose class="form-control">
+
+    <label class="projectForm-label" for="dueDate">Project Due Date</label>
+    <input type="date" name="dueDate" #dueDate class="form-control">
+
+    <label class="projectForm-label" for="headerImage">Header Image (URL)</label>
+    <input type="text" name="headerImage" #headerImage class="form-control">
+
+    <button class="btn btn-info addProject-btn" type="button" name="button" (click)="addProject(name.value,managers.value,description.value,goal.value,purpose.value,dueDate.value,headerImage.value)">Add Project</button>
+  </div>
+
+
+
+  <div class="rewardForm" *ngIf="projectToDisplay">
+    <label for="tier">Reward Tier</label>
+    <input type="number" name="tier" #tier class="form-control">
+
+    <label for="rewardName">Reward Name</label>
+    <input type="text" name="rewardName" #rewardName class="form-control">
+
+    <label for="rewardDescription">Reward Description</label>
+    <input type="text" name="rewardDescription" #rewardDescription class="form-control">
+
+    <button type="button" name="button" (click)= "addReward(tier.value,rewardName.value,rewardDescription.value)">Add Reward</button>
+  </div>
+
+</div>

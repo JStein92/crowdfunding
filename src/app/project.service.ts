@@ -23,5 +23,12 @@ export class ProjectService {
   {
     return this.database.object('projects/' + projectKey);
   }
+  addPledge(updatedProjectFundsRaised, projectToUpdateKey, pledgeAmount){
+    updatedProjectFundsRaised += pledgeAmount;
+    console.log(updatedProjectFundsRaised);
+    let projectEntryInFirebase = this.getProjectByKey(projectToUpdateKey);
+  //  console.log(localUpdatedProject.$key);
+    projectEntryInFirebase.update({fundsRaised: updatedProjectFundsRaised})
+  }
 
 }

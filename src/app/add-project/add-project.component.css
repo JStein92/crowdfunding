@@ -1,0 +1,30 @@
+.card-img-top{
+  width: 500px;
+}
+.projectToDisplay{
+  width: 500px;
+  margin: 30px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.projectForm{
+  margin: 50px;
+}
+.rewardForm{
+  margin: 50px;
+}
+.projectForm-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.projectForm-label {
+  margin-top: 15px;
+}
+.addProject-btn {
+  margin-top: 15px;
+  float: right;
+  letter-spacing: 1px;
+}
+.reward-card {
+  width: 200px;
+}

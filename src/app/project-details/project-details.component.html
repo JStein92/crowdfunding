@@ -38,8 +38,9 @@
           <p class="card-text tier">{{reward.name}}</p>
           <p class="card-text description"><small class="text-muted"> {{reward.description}}</small></p>
           <p class="card-text backers"><small class="text-muted">Backers: {{reward.backers}}</small></p>
-          <button (click)="pledgeForm(reward)" class="btn btn-sm btn-success">Pledge</button>
         </div>
+        <button (click)="pledgeForm(reward)" class="btn btn-sm btn-warning pledge-btn">Pledge</button>
+
       </div>
     </div>
 
@@ -49,7 +50,7 @@
   <form>
     <h3 class="pledge-form-title">Submit Pledge</h3>
     <label>Pledge Amount:</label>
-    <input type="number" value="{{selectedReward.tier}}">
+    <input #pledgeAmount type="number" value="{{selectedReward.tier}}">
     <label>Name:</label>
     <input type="text" placeholder="First Name">
     <input type="text" placeholder="Last Name">
@@ -57,5 +58,7 @@
     <input type="text" placeholder="XXXX-XXXX-XXXX-XXXX">
     <label>Email Address:</label>
     <input type="text" placeholder="emailaddress@email.com">
+    <button (click)="cancel()" type="button">Cancel</button>
+    <button (click)="submit(selectedReward.tier)" type="button">Submit</button>
   </form>
 </div>
