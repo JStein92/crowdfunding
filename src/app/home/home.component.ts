@@ -30,4 +30,9 @@ export class HomeComponent implements OnInit {
     this.filterByGoal = optionFromMenu;
   }
 
+  favorite(projectToFavorite){
+    this.projectService.addProjectToFavorites(projectToFavorite);
+    console.log(projectToFavorite);
+  }
+
 }

@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import {AddProjectComponent} from './add-project/add-project.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { FavoritedProjectsComponent } from './favorited-projects/favorited-projects.component';
 const appRoutes: Routes = [
   {
     path: '',
@@ -21,6 +21,10 @@ const appRoutes: Routes = [
   {
     path:'admin',
     component: AdminComponent
+  },
+  {
+    path:'favorited',
+    component: FavoritedProjectsComponent
   }
 ];
 

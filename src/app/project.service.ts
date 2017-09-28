@@ -5,14 +5,25 @@ import {Reward} from './reward.model';
 @Injectable()
 export class ProjectService {
 
+  favoritedProjects : FirebaseListObservable<any[]>;
   projects : FirebaseListObservable<any[]>;
   constructor(private database: AngularFireDatabase)
   {
     this.projects = database.list('projects');
+    this.favoritedProjects = database.list('favoritedProjects');
   }
 
   getProjects(){
     return this.projects;
+  }
+
+  addProjectToFavorites(myProject : Project){
+    this.favoritedProjects.push(myProject);
+
+  }
+
+  getFavoritedProjects(){
+    return this.favoritedProjects;
   }
 
   addProject(newProject : Project){
