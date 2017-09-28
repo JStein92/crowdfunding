@@ -14,11 +14,12 @@ import {ProjectPipe} from '../project.pipe';
 export class HomeComponent implements OnInit {
   filterByGoal : string = "allGoals";
   projects : FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
+
   constructor(private router : Router, private projectService: ProjectService) { }
 
   ngOnInit() {
     this.projects = this.projectService.getProjects();
-    console.log(this.projects);
   }
 
   showDetails(projectToShow){

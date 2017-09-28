@@ -23,12 +23,30 @@ export class ProjectService {
   {
     return this.database.object('projects/' + projectKey);
   }
+
   addPledge(updatedProjectFundsRaised, projectToUpdateKey, pledgeAmount){
-    updatedProjectFundsRaised += pledgeAmount;
+    updatedProjectFundsRaised += parseInt(pledgeAmount);
     console.log(updatedProjectFundsRaised);
     let projectEntryInFirebase = this.getProjectByKey(projectToUpdateKey);
   //  console.log(localUpdatedProject.$key);
     projectEntryInFirebase.update({fundsRaised: updatedProjectFundsRaised})
+  }
+
+  updateProject(localUpdatedProject){
+    let projectEntryInFirebase = this.getProjectByKey(localUpdatedProject.$key);
+    projectEntryInFirebase.update({name: localUpdatedProject.name,
+                                   managers: localUpdatedProject.managers,
+                                   description: localUpdatedProject.description,
+                                   goal: localUpdatedProject.goal,
+                                   purpose: localUpdatedProject.purpose,
+                                   totalBackers: localUpdatedProject.totalBackers,
+                                   dueDate: localUpdatedProject.dueDate,
+                                   headerImage: localUpdatedProject.headerImage})
+  }
+
+  deleteProject(projectToDelete){
+    var projectEntryInFirebase = this.getProjectByKey(projectToDelete.$key);
+    projectEntryInFirebase.remove();
   }
 
 }

@@ -73,4 +73,8 @@
     <button type="button" name="button" (click)= "addReward(tier.value,rewardName.value,rewardDescription.value)">Add Reward</button>
   </div>
 
+  <div class="projectFormSubmit-btn" *ngIf="projectToDisplay">
+    <button type="button" name="button" class="btn btn-success" id="btn-submit" (click)="submitProject()" routerLink="">Submit Project</button>
+  </div>
+
 </div>

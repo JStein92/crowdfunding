@@ -28,3 +28,11 @@
 .reward-card {
   width: 200px;
 }
+.projectFormSubmit-btn{
+
+  text-align: center;
+  left: 50%;
+}
+#btn-submit{
+    font-size: 1.3em;
+}
