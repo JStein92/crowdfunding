@@ -1,4 +1,8 @@
-# Crowdfunding
+# CrowdFunding
+
+#### _A 'Crowdfunding" type site (E.G. Kickstarter, GoFundMe), that lets users Create, View, Update, Delete, and Fund various projects._
+
+## Made with Angular2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
